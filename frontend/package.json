@@ -6,16 +6,21 @@
   "scripts": {
     "dev": "powershell -ExecutionPolicy Bypass -File ./scripts/dev.ps1",
     "dev:vite": "vite",
-    "build": "tsc && vite build",
+    "build": "pnpm run build:web",
+    "build:web": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
+    "@radix-ui/react-alert-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-popover": "^1.1.15",
     "@radix-ui/react-select": "^2.2.6",
     "@tailwindcss/vite": "^4.2.2",
     "@tauri-apps/api": "^2",
     "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-shell": "^2.3.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",

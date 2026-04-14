@@ -7,15 +7,7 @@ export type EdgeTtsVoice = {
   Gender?: string;
 };
 
-const DEFAULT_TTS_BACKEND_URL = "http://127.0.0.1:8765";
-
-const resolveBackendUrl = () => {
-  const envUrl = import.meta.env.VITE_TTS_BACKEND_URL;
-  return (typeof envUrl === "string" && envUrl.trim() ? envUrl : DEFAULT_TTS_BACKEND_URL).replace(
-    /\/+$/,
-    "",
-  );
-};
+import { ensureBackendReady, resolveBackendUrl } from "./backend-runtime";
 
 const buildApiUrl = (path: string) => `${resolveBackendUrl()}${path}`;
 
@@ -36,6 +28,7 @@ const extractBackendError = async (response: Response) => {
 };
 
 export const fetchTtsVoices = async () => {
+  await ensureBackendReady();
   const response = await fetch(buildApiUrl("/api/tts/voices"));
 
   if (!response.ok) {
@@ -47,6 +40,7 @@ export const fetchTtsVoices = async () => {
 };
 
 export const testTtsBackendConnection = async (voice: string, text: string) => {
+  await ensureBackendReady();
   const response = await fetch(buildApiUrl("/api/tts/test"), {
     method: "POST",
     headers: {
@@ -64,6 +58,7 @@ export const testTtsBackendConnection = async (voice: string, text: string) => {
 };
 
 export const synthesizeTtsAudio = async (voice: string, text: string) => {
+  await ensureBackendReady();
   const response = await fetch(buildApiUrl("/api/tts/synthesize"), {
     method: "POST",
     headers: {
