@@ -1,0 +1,1 @@
+-D__CUDA_ARCH__=750 -D__CUDA_ARCH_LIST__=750 -nologo -c -TP  -DCUDA_DOUBLE_MATH_FUNCTIONS -EHsc "-IC:/PROGRA~1/NVIDIA~2/CUDA/v13.2/bin/../include" "-IC:/PROGRA~1/NVIDIA~2/CUDA/v13.2/bin/../include/cccl"     "C:\FinCap\third_party\opencv-4x-build-fcl4\CMakeFiles\3.31.6-msvc6\CompilerIdCUDA\tmp\CMakeCUDACompilerId.cudafe1.cpp" 

@@ -215,7 +215,7 @@ function App() {
           onDeleteProjectsForever={permanentlyDeleteProjects}
         />
       ) : (
-        <ProjectWorkspace project={activeProject} onBack={returnHome} />
+        <ProjectWorkspace project={activeProject} onBack={returnHome} settings={settings} />
       )}
 
       <SettingsModal

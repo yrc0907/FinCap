@@ -1,0 +1,360 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/include/opencv2/cudaimgproc.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/bilateral_filter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/blend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/canny.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/color.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/connectedcomponents.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/corners.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/generalized_hough.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/gftt.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/histogram.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/hough_circles.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/hough_lines.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/hough_segments.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/match_template.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/mean_shift.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/moments.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/mssegmentation.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cvt_color_internal.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/bilateral_filter.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/blend.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/build_point_list.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/canny.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/clahe.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/color.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/connectedcomponents.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/corners.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/debayer.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/generalized_hough.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/gftt.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/hist.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/hough_circles.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/hough_lines.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/hough_segments.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/match_template.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/mean_shift.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/moments.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudaimgproc",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-4x-build-fcl4/cvconfig.h"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-4x-build-fcl4/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-4x-build-fcl4/modules/cudaimgproc/vs_version.rc"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-4x-build-fcl4/modules/cudaimgproc/opencv_cudaimgproc_main.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudaimgproc",
+			"Module"
+		],
+		"name" : "opencv_cudaimgproc"
+	}
+}

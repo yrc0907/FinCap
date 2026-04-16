@@ -1,0 +1,58 @@
+# Target labels
+ Extra
+ opencv_cudawarping
+ Module
+# Source files and their labels
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/include/opencv2/cudawarping.hpp
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/pyramids.cpp
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/remap.cpp
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/resize.cpp
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/warp.cpp
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/precomp.hpp
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/pyr_down.cu
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/pyr_up.cu
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/remap.cu
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/resize.cu
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/warp.cu
+ Extra
+ opencv_cudawarping
+ Module
+C:/FinCap/third_party/opencv-build/cvconfig.h
+C:/FinCap/third_party/opencv-build/opencv2/opencv_modules.hpp
+C:/FinCap/third_party/opencv-build/modules/cudawarping/vs_version.rc
+C:/FinCap/third_party/opencv-build/modules/cudawarping/opencv_cudawarping_main.cpp
+C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyr_down.cu.obj
+C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyr_up.cu.obj
+C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_remap.cu.obj
+C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_resize.cu.obj
+C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_warp.cu.obj

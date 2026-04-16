@@ -1,0 +1,302 @@
+#use_cache "C:/FinCap/third_party/opencv-4x/.cache"
+#do_unpack "ippicv_2022.3.0_win_intel64_20250919_general.zip" "27575d20636f76cb81dcf3898cfe6837" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/e6154bd971073bc60f7141e5373108501b0310a9/ippicv/ippicv_2022.3.0_win_intel64_20250919_general.zip" "C:/FinCap/third_party/opencv-4x-build/3rdparty/ippicv"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ippicv/27575d20636f76cb81dcf3898cfe6837-ippicv_2022.3.0_win_intel64_20250919_general.zip" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/e6154bd971073bc60f7141e5373108501b0310a9/ippicv/ippicv_2022.3.0_win_intel64_20250919_general.zip"
+#try 1
+# timeout on name lookup is not supported
+# Host raw.githubusercontent.com:443 was resolved.
+# IPv6: (none)
+# IPv4: 185.199.108.133, 185.199.110.133, 185.199.111.133, 185.199.109.133
+#   Trying 185.199.108.133:443...
+# schannel: disabled automatic use of client certificate
+# ALPN: curl offers h2,http/1.1
+# ALPN: server accepted h2
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# Connected to raw.githubusercontent.com (185.199.108.133) port 443
+# using HTTP/2
+# [HTTP/2] [1] OPENED stream for https://raw.githubusercontent.com/opencv/opencv_3rdparty/e6154bd971073bc60f7141e5373108501b0310a9/ippicv/ippicv_2022.3.0_win_intel64_20250919_general.zip
+# [HTTP/2] [1] [:method: GET]
+# [HTTP/2] [1] [:scheme: https]
+# [HTTP/2] [1] [:authority: raw.githubusercontent.com]
+# [HTTP/2] [1] [:path: /opencv/opencv_3rdparty/e6154bd971073bc60f7141e5373108501b0310a9/ippicv/ippicv_2022.3.0_win_intel64_20250919_general.zip]
+# [HTTP/2] [1] [user-agent: curl/8.10.1]
+# [HTTP/2] [1] [accept: */*]
+# GET /opencv/opencv_3rdparty/e6154bd971073bc60f7141e5373108501b0310a9/ippicv/ippicv_2022.3.0_win_intel64_20250919_general.zip HTTP/2
+# Host: raw.githubusercontent.com
+# User-Agent: curl/8.10.1
+# Accept: */*
+# 
+# Request completely sent off
+# HTTP/2 200 
+# cache-control: max-age=300
+# content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+# content-type: application/zip
+# etag: "66bbe6bbfd2cb212925a2635ab115df73d19f7b3647703038c0fa42c594a0b94"
+# strict-transport-security: max-age=31536000
+# x-content-type-options: nosniff
+# x-frame-options: deny
+# x-xss-protection: 1; mode=block
+# x-github-request-id: A4A2:36E0EC:59863:9A039:69DE2B91
+# accept-ranges: bytes
+# date: Tue, 14 Apr 2026 11:57:08 GMT
+# via: 1.1 varnish
+# x-served-by: cache-itm1220076-ITM
+# x-cache: MISS
+# x-cache-hits: 0
+# x-timer: S1776167826.176994,VS0,VE1898
+# vary: Authorization,Accept-Encoding
+# access-control-allow-origin: *
+# cross-origin-resource-policy: cross-origin
+# x-fastly-request-id: 591f7717ba61654854c27177e164319718a94a3b
+# expires: Tue, 14 Apr 2026 12:02:08 GMT
+# source-age: 2
+# content-length: 29292522
+# 
+# [7601 bytes data]
+# [1358 bytes data]
+# schannel: failed to decrypt data, need more data
+# [6514 bytes data]
+# [9497 bytes data]
+# [6887 bytes data]
+# [5326 bytes data]
+# [1358 bytes data]
+# schannel: failed to decrypt data, need more data
+# [4074 bytes data]
+# [12213 bytes data]
+# schannel: failed to decrypt data, need more data
+# [4074 bytes data]
+# [10855 bytes data]
+# [1349 bytes data]
+# schannel: failed to decrypt data, need more data
+# [1358 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [424 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [1004 bytes data]
+# [1703 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [1349 bytes data]
+# schannel: failed to decrypt data, need more data
+# [1358 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# Operation too slow. Less than 1 bytes/sec transferred the last 60 seconds
+# Connection #0 to host raw.githubusercontent.com left intact
+# 
+
+#do_unpack "v0.1.2e.zip" "962ce79e0b95591f226431f7b5f152cd" "https://github.com/opencv/ade/archive/v0.1.2e.zip" "C:/FinCap/third_party/opencv-4x-build/3rdparty/ade"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ade/962ce79e0b95591f226431f7b5f152cd-v0.1.2e.zip" "https://github.com/opencv/ade/archive/v0.1.2e.zip"
+#try 1
+# timeout on name lookup is not supported
+# Host github.com:443 was resolved.
+# IPv6: (none)
+# IPv4: 20.205.243.166
+#   Trying 20.205.243.166:443...
+# schannel: disabled automatic use of client certificate
+# ALPN: curl offers h2,http/1.1
+# ALPN: server accepted h2
+# Connected to github.com (20.205.243.166) port 443
+# using HTTP/2
+# [HTTP/2] [1] OPENED stream for https://github.com/opencv/ade/archive/v0.1.2e.zip
+# [HTTP/2] [1] [:method: GET]
+# [HTTP/2] [1] [:scheme: https]
+# [HTTP/2] [1] [:authority: github.com]
+# [HTTP/2] [1] [:path: /opencv/ade/archive/v0.1.2e.zip]
+# [HTTP/2] [1] [user-agent: curl/8.10.1]
+# [HTTP/2] [1] [accept: */*]
+# GET /opencv/ade/archive/v0.1.2e.zip HTTP/2
+# Host: github.com
+# User-Agent: curl/8.10.1
+# Accept: */*
+# 
+# Request completely sent off
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# HTTP/2 302 
+# date: Tue, 14 Apr 2026 11:58:27 GMT
+# content-type: text/html; charset=utf-8
+# content-length: 0
+# vary: X-PJAX, X-PJAX-Container, Turbo-Visit, Turbo-Frame, X-Requested-With, Sec-Fetch-Site,Accept-Encoding, Accept, X-Requested-With
+# location: https://codeload.github.com/opencv/ade/zip/refs/tags/v0.1.2e
+# cache-control: max-age=0, private
+# strict-transport-security: max-age=31536000; includeSubdomains; preload
+# x-frame-options: deny
+# x-content-type-options: nosniff
+# x-xss-protection: 0
+# referrer-policy: no-referrer-when-downgrade
+# content-security-policy: default-src 'none'; base-uri 'self'; child-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com *.rel.tunnels.api.visualstudio.com wss://*.rel.tunnels.api.visualstudio.com github.githubassets.com objects-origin.githubusercontent.com copilot-proxy.githubusercontent.com proxy.individual.githubcopilot.com proxy.business.githubcopilot.com proxy.enterprise.githubcopilot.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net productionresultssa1.blob.core.windows.net productionresultssa2.blob.core.windows.net productionresultssa3.blob.core.windows.net productionresultssa4.blob.core.windows.net productionresultssa5.blob.core.windows.net productionresultssa6.blob.core.windows.net productionresultssa7.blob.core.windows.net productionresultssa8.blob.core.windows.net productionresultssa9.blob.core.windows.net productionresultssa10.blob.core.windows.net productionresultssa11.blob.core.windows.net productionresultssa12.blob.core.windows.net productionresultssa13.blob.core.windows.net productionresultssa14.blob.core.windows.net productionresultssa15.blob.core.windows.net productionresultssa16.blob.core.windows.net productionresultssa17.blob.core.windows.net productionresultssa18.blob.core.windows.net productionresultssa19.blob.core.windows.net github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com wss://alive-staging.github.com api.githubcopilot.com api.individual.githubcopilot.com api.business.githubcopilot.com api.enterprise.githubcopilot.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com copilot-workspace.githubnext.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com; img-src 'self' data: blob: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com private-avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com release-assets.githubusercontent.com secured-user-images.githubusercontent.com user-images.githubusercontent.com private-user-images.githubusercontent.com opengraph.githubassets.com marketplace-screenshots.githubusercontent.com copilotprodattachments.blob.core.windows.net/github-production-copilot-attachments/ github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com objects-origin.githubusercontent.com *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com secured-user-images.githubusercontent.com private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com gist.github.com github.githubassets.com; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/
+# server: github.com
+# x-github-request-id: EF09:175DD:412280:46668E:69DE2BE3
+# Ignoring the response-body
+# setting size while ignoring
+# 
+# Connection #0 to host github.com left intact
+# Issue another request to this URL: 'https://codeload.github.com/opencv/ade/zip/refs/tags/v0.1.2e'
+# timeout on name lookup is not supported
+# Host codeload.github.com:443 was resolved.
+# IPv6: (none)
+# IPv4: 20.205.243.165
+#   Trying 20.205.243.165:443...
+# schannel: disabled automatic use of client certificate
+# ALPN: curl offers h2,http/1.1
+# ALPN: server accepted h2
+# Connected to codeload.github.com (20.205.243.165) port 443
+# using HTTP/2
+# [HTTP/2] [1] OPENED stream for https://codeload.github.com/opencv/ade/zip/refs/tags/v0.1.2e
+# [HTTP/2] [1] [:method: GET]
+# [HTTP/2] [1] [:scheme: https]
+# [HTTP/2] [1] [:authority: codeload.github.com]
+# [HTTP/2] [1] [:path: /opencv/ade/zip/refs/tags/v0.1.2e]
+# [HTTP/2] [1] [user-agent: curl/8.10.1]
+# [HTTP/2] [1] [accept: */*]
+# GET /opencv/ade/zip/refs/tags/v0.1.2e HTTP/2
+# Host: codeload.github.com
+# User-Agent: curl/8.10.1
+# Accept: */*
+# 
+# Request completely sent off
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# HTTP/2 200 
+# access-control-allow-origin: https://render.githubusercontent.com
+# content-disposition: attachment; filename=ade-0.1.2e.zip
+# content-length: 168179
+# content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+# content-type: application/zip
+# cross-origin-resource-policy: cross-origin
+# etag: "e189b56b00748bd1bcaeff03b89378523462617e588eed784f94329c593d02a6"
+# strict-transport-security: max-age=31536000
+# vary: Authorization,Accept-Encoding
+# x-content-type-options: nosniff
+# x-frame-options: deny
+# x-xss-protection: 1; mode=block
+# date: Tue, 14 Apr 2026 11:58:28 GMT
+# x-github-request-id: 4C88:C5E51:A6F4:22ECA:69DE2BE4
+# 
+# [12433 bytes data]
+# [16375 bytes data]
+# schannel: failed to decrypt data, need more data
+# [9 bytes data]
+# [8211 bytes data]
+# schannel: failed to decrypt data, need more data
+# [2805 bytes data]
+# schannel: failed to decrypt data, need more data
+# [5480 bytes data]
+# [9581 bytes data]
+# schannel: failed to decrypt data, need more data
+# [5480 bytes data]
+# [1323 bytes data]
+# [1361 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [1370 bytes data]
+# schannel: failed to decrypt data, need more data
+# [13653 bytes data]
+# [2722 bytes data]
+# schannel: failed to decrypt data, need more data
+# [6859 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [5480 bytes data]
+# schannel: failed to decrypt data, need more data
+# [1323 bytes data]
+# [1081 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [8211 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [1370 bytes data]
+# schannel: failed to decrypt data, need more data
+# [6803 bytes data]
+# [9572 bytes data]
+# schannel: failed to decrypt data, need more data
+# [6812 bytes data]
+# [4101 bytes data]
+# schannel: failed to decrypt data, need more data
+# [12283 bytes data]
+# [4092 bytes data]
+# schannel: failed to decrypt data, need more data
+# [8229 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [4063 bytes data]
+# [2731 bytes data]
+# [4366 bytes data]
+# [0 bytes data]
+# Connection #1 to host codeload.github.com left intact
+# 
+
+#check_md5 "C:/FinCap/third_party/opencv-4x/.cache/ade/962ce79e0b95591f226431f7b5f152cd-v0.1.2e.zip"
+#mkdir "C:/FinCap/third_party/opencv-4x-build/3rdparty/ade"
+#unpack "C:/FinCap/third_party/opencv-4x-build/3rdparty/ade" "C:/FinCap/third_party/opencv-4x/.cache/ade/962ce79e0b95591f226431f7b5f152cd-v0.1.2e.zip"
+#do_copy "opencv_videoio_ffmpeg.dll" "47730de2286110b0d1250ff9cf50ce56" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg.dll" "C:/FinCap/third_party/opencv-4x-build/3rdparty/ffmpeg"
+#missing "C:/FinCap/third_party/opencv-4x-build/3rdparty/ffmpeg/opencv_videoio_ffmpeg.dll"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/47730de2286110b0d1250ff9cf50ce56-opencv_videoio_ffmpeg.dll" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg.dll"
+#try 1
+#do_copy "opencv_videoio_ffmpeg_64.dll" "3248b4663ffef770cdb54ec8b9d16a28" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg_64.dll" "C:/FinCap/third_party/opencv-4x-build/3rdparty/ffmpeg"
+#missing "C:/FinCap/third_party/opencv-4x-build/3rdparty/ffmpeg/opencv_videoio_ffmpeg_64.dll"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/3248b4663ffef770cdb54ec8b9d16a28-opencv_videoio_ffmpeg_64.dll" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg_64.dll"
+#try 1
+#do_copy "ffmpeg_version.cmake" "8862c87496e2e8c375965e1277dee1c7" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake" "C:/FinCap/third_party/opencv-4x-build/3rdparty/ffmpeg"
+#missing "C:/FinCap/third_party/opencv-4x-build/3rdparty/ffmpeg/ffmpeg_version.cmake"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/8862c87496e2e8c375965e1277dee1c7-ffmpeg_version.cmake" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake"
+#try 1
+# timeout on name lookup is not supported
+# Host raw.githubusercontent.com:443 was resolved.
+# IPv6: (none)
+# IPv4: 185.199.111.133, 185.199.109.133, 185.199.108.133, 185.199.110.133
+#   Trying 185.199.111.133:443...
+# schannel: disabled automatic use of client certificate
+# ALPN: curl offers h2,http/1.1
+# ALPN: server accepted h2
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# Connected to raw.githubusercontent.com (185.199.111.133) port 443
+# using HTTP/2
+# [HTTP/2] [1] OPENED stream for https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake
+# [HTTP/2] [1] [:method: GET]
+# [HTTP/2] [1] [:scheme: https]
+# [HTTP/2] [1] [:authority: raw.githubusercontent.com]
+# [HTTP/2] [1] [:path: /opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake]
+# [HTTP/2] [1] [user-agent: curl/8.10.1]
+# [HTTP/2] [1] [accept: */*]
+# GET /opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake HTTP/2
+# Host: raw.githubusercontent.com
+# User-Agent: curl/8.10.1
+# Accept: */*
+# 
+# Request completely sent off
+# Recv failure: Connection was reset
+# schannel: recv returned CURLE_RECV_ERROR
+# Failed receiving HTTP2 data: 56(Failure when receiving data from the peer)
+# Connection #0 to host raw.githubusercontent.com left intact
+# 
+

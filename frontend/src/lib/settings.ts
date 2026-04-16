@@ -2,7 +2,7 @@ import type { ConnectionStatus, ModelConfig, SystemConfig } from "../types/setti
 
 export const STORAGE_KEY = "fincap.system-config.v1";
 export const OPENAI_COMPATIBLE_PLACEHOLDER = "https://yunwu.ai/v1/chat/completions";
-export const DEFAULT_MODEL = "gpt-4o-mini";
+export const DEFAULT_MODEL = "gpt-4.1";
 export const DEFAULT_TTS_VOICE = "";
 export const DEFAULT_TTS_TEXT = "This is a test from FinCap.";
 

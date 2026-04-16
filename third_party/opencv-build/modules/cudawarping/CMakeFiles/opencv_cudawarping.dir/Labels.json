@@ -1,0 +1,141 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/include/opencv2/cudawarping.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/pyramids.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/remap.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/resize.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/warp.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/pyr_down.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/pyr_up.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/remap.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/resize.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib/modules/cudawarping/src/cuda/warp.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/cvconfig.h"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/modules/cudawarping/vs_version.rc"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/modules/cudawarping/opencv_cudawarping_main.cpp"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyr_down.cu.obj"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyr_up.cu.obj"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_remap.cu.obj"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_resize.cu.obj"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-build/modules/cudawarping/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_warp.cu.obj"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudawarping",
+			"Module"
+		],
+		"name" : "opencv_cudawarping"
+	}
+}

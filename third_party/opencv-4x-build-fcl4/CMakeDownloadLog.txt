@@ -1,0 +1,443 @@
+#use_cache "C:/FinCap/third_party/opencv-4x/.cache"
+#do_unpack "ippicv_2022.3.0_win_intel64_20250919_general.zip" "27575d20636f76cb81dcf3898cfe6837" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/e6154bd971073bc60f7141e5373108501b0310a9/ippicv/ippicv_2022.3.0_win_intel64_20250919_general.zip" "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ippicv"
+#check_md5 "C:/FinCap/third_party/opencv-4x/.cache/ippicv/27575d20636f76cb81dcf3898cfe6837-ippicv_2022.3.0_win_intel64_20250919_general.zip"
+#mismatch_md5 "C:/FinCap/third_party/opencv-4x/.cache/ippicv/27575d20636f76cb81dcf3898cfe6837-ippicv_2022.3.0_win_intel64_20250919_general.zip" "a1f18c140d274e8111a7ca8cdb87ccd2"
+#delete "C:/FinCap/third_party/opencv-4x/.cache/ippicv/27575d20636f76cb81dcf3898cfe6837-ippicv_2022.3.0_win_intel64_20250919_general.zip"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ippicv/27575d20636f76cb81dcf3898cfe6837-ippicv_2022.3.0_win_intel64_20250919_general.zip" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/e6154bd971073bc60f7141e5373108501b0310a9/ippicv/ippicv_2022.3.0_win_intel64_20250919_general.zip"
+#try 1
+#do_unpack "v0.1.2e.zip" "962ce79e0b95591f226431f7b5f152cd" "https://github.com/opencv/ade/archive/v0.1.2e.zip" "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ade"
+#check_md5 "C:/FinCap/third_party/opencv-4x/.cache/ade/962ce79e0b95591f226431f7b5f152cd-v0.1.2e.zip"
+#mkdir "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ade"
+#unpack "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ade" "C:/FinCap/third_party/opencv-4x/.cache/ade/962ce79e0b95591f226431f7b5f152cd-v0.1.2e.zip"
+#do_copy "opencv_videoio_ffmpeg.dll" "47730de2286110b0d1250ff9cf50ce56" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg.dll" "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ffmpeg"
+#missing "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ffmpeg/opencv_videoio_ffmpeg.dll"
+#check_md5 "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/47730de2286110b0d1250ff9cf50ce56-opencv_videoio_ffmpeg.dll"
+#mismatch_md5 "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/47730de2286110b0d1250ff9cf50ce56-opencv_videoio_ffmpeg.dll" "db6925688910e10058e6adade55e6b14"
+#delete "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/47730de2286110b0d1250ff9cf50ce56-opencv_videoio_ffmpeg.dll"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/47730de2286110b0d1250ff9cf50ce56-opencv_videoio_ffmpeg.dll" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg.dll"
+#try 1
+# timeout on name lookup is not supported
+# Host raw.githubusercontent.com:443 was resolved.
+# IPv6: (none)
+# IPv4: 185.199.111.133, 185.199.109.133, 185.199.108.133, 185.199.110.133
+#   Trying 185.199.111.133:443...
+# connect to 185.199.111.133 port 443 from 0.0.0.0 port 11993 failed: Timed out
+#   Trying 185.199.109.133:443...
+# schannel: disabled automatic use of client certificate
+# ALPN: curl offers h2,http/1.1
+# ALPN: server accepted h2
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# Connected to raw.githubusercontent.com (185.199.109.133) port 443
+# using HTTP/2
+# [HTTP/2] [1] OPENED stream for https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg.dll
+# [HTTP/2] [1] [:method: GET]
+# [HTTP/2] [1] [:scheme: https]
+# [HTTP/2] [1] [:authority: raw.githubusercontent.com]
+# [HTTP/2] [1] [:path: /opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg.dll]
+# [HTTP/2] [1] [user-agent: curl/8.10.1]
+# [HTTP/2] [1] [accept: */*]
+# GET /opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg.dll HTTP/2
+# Host: raw.githubusercontent.com
+# User-Agent: curl/8.10.1
+# Accept: */*
+# 
+# Request completely sent off
+# HTTP/2 200 
+# cache-control: max-age=300
+# content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+# content-type: application/octet-stream
+# etag: "93925369d2c8d8b7b91c723f4a1cfdef2d5b655448dc5084c9addb89ed18205d"
+# strict-transport-security: max-age=31536000
+# x-content-type-options: nosniff
+# x-frame-options: deny
+# x-xss-protection: 1; mode=block
+# x-github-request-id: C98C:21634E:5950A:9A363:69DE2BB1
+# accept-ranges: bytes
+# date: Tue, 14 Apr 2026 13:05:22 GMT
+# via: 1.1 varnish
+# x-served-by: cache-itm1220061-ITM
+# x-cache: HIT
+# x-cache-hits: 0
+# x-timer: S1776171923.785891,VS0,VE204
+# vary: Authorization,Accept-Encoding
+# access-control-allow-origin: *
+# cross-origin-resource-policy: cross-origin
+# x-fastly-request-id: 32c8256055d5473f5668dd59b8f9d0d2ea04a071
+# expires: Tue, 14 Apr 2026 13:10:22 GMT
+# source-age: 0
+# content-length: 25699328
+# 
+# [1349 bytes data]
+# [2716 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [4074 bytes data]
+# [1358 bytes data]
+# [97 bytes data]
+# [2610 bytes data]
+# [1358 bytes data]
+# [2716 bytes data]
+# [4074 bytes data]
+# [2716 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [194 bytes data]
+# [1155 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [2716 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [406 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [16375 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [9 bytes data]
+# [16366 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [18 bytes data]
+# [16357 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [27 bytes data]
+# [16348 bytes data]
+# [36 bytes data]
+# [16339 bytes data]
+# [45 bytes data]
+# [16330 bytes data]
+# [54 bytes data]
+# [16321 bytes data]
+# [63 bytes data]
+# [16312 bytes data]
+# schannel: failed to decrypt data, need more data
+# [72 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [16375 bytes data]
+# schannel: failed to decrypt data, need more data
+# [9 bytes data]
+# [16366 bytes data]
+# schannel: failed to decrypt data, need more data
+# [18 bytes data]
+# [16357 bytes data]
+# [27 bytes data]
+# [16348 bytes data]
+# [36 bytes data]
+# [16339 bytes data]
+# [45 bytes data]
+# [16330 bytes data]
+# [54 bytes data]
+# [16321 bytes data]
+# [63 bytes data]
+# [16312 bytes data]
+# schannel: failed to decrypt data, need more data
+# [72 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [16375 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [9 bytes data]
+# [16366 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [18 bytes data]
+# [16357 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [27 bytes data]
+# [16348 bytes data]
+# schannel: failed to decrypt data, need more data
+# [36 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [16375 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [9 bytes data]
+# [16366 bytes data]
+# schannel: failed to decrypt data, need more data
+# [18 bytes data]
+# [16357 bytes data]
+# schannel: failed to decrypt data, need more data
+# [27 bytes data]
+# [16348 bytes data]
+# schannel: failed to decrypt data, need more data
+# [36 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [16375 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [9 bytes data]
+# [16366 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [18 bytes data]
+# [16357 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [27 bytes data]
+# [16348 bytes data]
+# schannel: failed to decrypt data, need more data
+# [36 bytes data]
+# schannel: failed to decrypt data, need more data
+# schannel: failed to decrypt data, need more data
+# [1349 bytes data]
+# schannel: failed to decrypt data, need more data
+# [1358 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [4074 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [1358 bytes data]
+# [4074 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [2707 bytes data]
+# [2707 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [532 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [2707 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [2707 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [2716 bytes data]
+# [2707 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [1349 bytes data]
+# [1358 bytes data]
+# [2707 bytes data]
+# [4065 bytes data]
+# [1349 bytes data]
+# [514 bytes data]
+# [1349 bytes data]
+# Operation too slow. Less than 1 bytes/sec transferred the last 60 seconds
+# Connection #0 to host raw.githubusercontent.com left intact
+# 
+
+#do_copy "opencv_videoio_ffmpeg_64.dll" "3248b4663ffef770cdb54ec8b9d16a28" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg_64.dll" "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ffmpeg"
+#missing "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ffmpeg/opencv_videoio_ffmpeg_64.dll"
+#check_md5 "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/3248b4663ffef770cdb54ec8b9d16a28-opencv_videoio_ffmpeg_64.dll"
+#mismatch_md5 "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/3248b4663ffef770cdb54ec8b9d16a28-opencv_videoio_ffmpeg_64.dll" "a1d7330c4237d1aab716b08b44e96e56"
+#delete "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/3248b4663ffef770cdb54ec8b9d16a28-opencv_videoio_ffmpeg_64.dll"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/3248b4663ffef770cdb54ec8b9d16a28-opencv_videoio_ffmpeg_64.dll" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg_64.dll"
+#try 1
+# timeout on name lookup is not supported
+# Host raw.githubusercontent.com:443 was resolved.
+# IPv6: (none)
+# IPv4: 185.199.111.133, 185.199.109.133, 185.199.108.133, 185.199.110.133
+#   Trying 185.199.111.133:443...
+# connect to 185.199.111.133 port 443 from 0.0.0.0 port 13504 failed: Timed out
+#   Trying 185.199.109.133:443...
+# connect to 185.199.109.133 port 443 from 0.0.0.0 port 7143 failed: Timed out
+#   Trying 185.199.108.133:443...
+# schannel: disabled automatic use of client certificate
+# ALPN: curl offers h2,http/1.1
+# ALPN: server accepted h2
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# Connected to raw.githubusercontent.com (185.199.108.133) port 443
+# using HTTP/2
+# [HTTP/2] [1] OPENED stream for https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg_64.dll
+# [HTTP/2] [1] [:method: GET]
+# [HTTP/2] [1] [:scheme: https]
+# [HTTP/2] [1] [:authority: raw.githubusercontent.com]
+# [HTTP/2] [1] [:path: /opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg_64.dll]
+# [HTTP/2] [1] [user-agent: curl/8.10.1]
+# [HTTP/2] [1] [accept: */*]
+# GET /opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/opencv_videoio_ffmpeg_64.dll HTTP/2
+# Host: raw.githubusercontent.com
+# User-Agent: curl/8.10.1
+# Accept: */*
+# 
+# Request completely sent off
+# Recv failure: Connection was reset
+# schannel: recv returned CURLE_RECV_ERROR
+# Failed receiving HTTP2 data: 56(Failure when receiving data from the peer)
+# Connection #0 to host raw.githubusercontent.com left intact
+# 
+
+#do_copy "ffmpeg_version.cmake" "8862c87496e2e8c375965e1277dee1c7" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake" "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ffmpeg"
+#missing "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ffmpeg/ffmpeg_version.cmake"
+#check_md5 "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/8862c87496e2e8c375965e1277dee1c7-ffmpeg_version.cmake"
+#mismatch_md5 "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/8862c87496e2e8c375965e1277dee1c7-ffmpeg_version.cmake" "d41d8cd98f00b204e9800998ecf8427e"
+#delete "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/8862c87496e2e8c375965e1277dee1c7-ffmpeg_version.cmake"
+#cmake_download "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/8862c87496e2e8c375965e1277dee1c7-ffmpeg_version.cmake" "https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake"
+#try 1
+# timeout on name lookup is not supported
+# Host raw.githubusercontent.com:443 was resolved.
+# IPv6: (none)
+# IPv4: 185.199.110.133, 185.199.109.133, 185.199.111.133, 185.199.108.133
+#   Trying 185.199.110.133:443...
+# schannel: disabled automatic use of client certificate
+# ALPN: curl offers h2,http/1.1
+# ALPN: server accepted h2
+# schannel: remote party requests renegotiation
+# schannel: renegotiating SSL/TLS connection
+# schannel: SSL/TLS connection renegotiated
+# Connected to raw.githubusercontent.com (185.199.110.133) port 443
+# using HTTP/2
+# [HTTP/2] [1] OPENED stream for https://raw.githubusercontent.com/opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake
+# [HTTP/2] [1] [:method: GET]
+# [HTTP/2] [1] [:scheme: https]
+# [HTTP/2] [1] [:authority: raw.githubusercontent.com]
+# [HTTP/2] [1] [:path: /opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake]
+# [HTTP/2] [1] [user-agent: curl/8.10.1]
+# [HTTP/2] [1] [accept: */*]
+# GET /opencv/opencv_3rdparty/d82ad9a54a7b42a1648a9cae8fed5c2f20ea396c/ffmpeg/ffmpeg_version.cmake HTTP/2
+# Host: raw.githubusercontent.com
+# User-Agent: curl/8.10.1
+# Accept: */*
+# 
+# Request completely sent off
+# HTTP/2 200 
+# cache-control: max-age=300
+# content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+# content-type: text/plain; charset=utf-8
+# etag: "fa5c2d2566a9e9cb5c0f40f5e54addc1e8fbb92669597f6694da5879cf972785"
+# strict-transport-security: max-age=31536000
+# x-content-type-options: nosniff
+# x-frame-options: deny
+# x-xss-protection: 1; mode=block
+# x-github-request-id: 0DB2:98421:79083:D505D:69DE3C24
+# accept-ranges: bytes
+# date: Tue, 14 Apr 2026 13:07:48 GMT
+# via: 1.1 varnish
+# x-served-by: cache-itm1220038-ITM
+# x-cache: MISS
+# x-cache-hits: 0
+# x-timer: S1776172069.531090,VS0,VE240
+# vary: Authorization,Accept-Encoding
+# access-control-allow-origin: *
+# cross-origin-resource-policy: cross-origin
+# x-fastly-request-id: 49f38aa2e0953ed43da1ea8bb46cb2d74a7c7110
+# expires: Tue, 14 Apr 2026 13:12:48 GMT
+# source-age: 0
+# content-length: 362
+# 
+# [362 bytes data]
+# [0 bytes data]
+# Connection #0 to host raw.githubusercontent.com left intact
+# 
+
+#check_md5 "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/8862c87496e2e8c375965e1277dee1c7-ffmpeg_version.cmake"
+#copy "C:/FinCap/third_party/opencv-4x-build-fcl4/3rdparty/ffmpeg/ffmpeg_version.cmake" "C:/FinCap/third_party/opencv-4x/.cache/ffmpeg/8862c87496e2e8c375965e1277dee1c7-ffmpeg_version.cmake"

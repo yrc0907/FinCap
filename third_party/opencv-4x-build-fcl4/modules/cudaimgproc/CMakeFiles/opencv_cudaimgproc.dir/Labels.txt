@@ -1,0 +1,157 @@
+# Target labels
+ Extra
+ opencv_cudaimgproc
+ Module
+# Source files and their labels
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/include/opencv2/cudaimgproc.hpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/bilateral_filter.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/blend.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/canny.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/color.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/connectedcomponents.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/corners.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/generalized_hough.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/gftt.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/histogram.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/hough_circles.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/hough_lines.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/hough_segments.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/match_template.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/mean_shift.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/moments.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/mssegmentation.cpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cvt_color_internal.h
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/precomp.hpp
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/bilateral_filter.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/blend.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/build_point_list.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/canny.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/clahe.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/color.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/connectedcomponents.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/corners.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/debayer.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/generalized_hough.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/gftt.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/hist.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/hough_circles.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/hough_lines.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/hough_segments.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/match_template.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/mean_shift.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv_contrib-4x/modules/cudaimgproc/src/cuda/moments.cu
+ Extra
+ opencv_cudaimgproc
+ Module
+C:/FinCap/third_party/opencv-4x-build-fcl4/cvconfig.h
+C:/FinCap/third_party/opencv-4x-build-fcl4/opencv2/opencv_modules.hpp
+C:/FinCap/third_party/opencv-4x-build-fcl4/modules/cudaimgproc/vs_version.rc
+C:/FinCap/third_party/opencv-4x-build-fcl4/modules/cudaimgproc/opencv_cudaimgproc_main.cpp

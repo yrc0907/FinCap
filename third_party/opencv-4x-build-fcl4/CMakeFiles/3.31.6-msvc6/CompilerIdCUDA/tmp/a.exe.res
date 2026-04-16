@@ -1,0 +1,1 @@
+-D__CUDA_ARCH_LIST__=750 -nologo "C:\FinCap\third_party\opencv-4x-build-fcl4\CMakeFiles\3.31.6-msvc6\CompilerIdCUDA\tmp\a_dlink.obj" "C:\FinCap\third_party\opencv-4x-build-fcl4\CMakeFiles\3.31.6-msvc6\CompilerIdCUDA\tmp\CMakeCUDACompilerId.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:/PROGRA~1/NVIDIA~2/CUDA/v13.2/bin/../lib/x64"  cudadevrt.lib  cudart.lib
