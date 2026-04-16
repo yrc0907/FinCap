@@ -2,9 +2,14 @@
 .worktrees/
 worktrees/
 tools/
+.opencv-cuda-wheel-test/
+.pyinstaller/
 .venv-lighthouse/
+.venv/
+.venv-opencv-cuda-test/
 artifacts/
 _tmp_*/
+tests/
 text_video.mp4
 *.log
 *.tmp

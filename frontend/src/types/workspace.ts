@@ -266,6 +266,8 @@ export type VlmShotGroup = {
   peakRole: string;
   speakerHint: string;
   speakerConfidence: number;
+  evidenceSource: "ocr" | "asr" | "conflict" | "none";
+  textConflict: boolean;
   reason: string;
 };
 

@@ -161,23 +161,28 @@ def select_asr_text_for_window(
 
 def format_multimodal_evidence_block(
     *,
-    ocr_lines: list[str] | None = None,
-    asr_lines: list[str] | None = None,
+    text_evidence_lines: list[str] | None = None,
+    text_evidence_source: str = "none",
+    text_evidence_conflict: bool = False,
+    text_evidence_note: str = "",
     character_references: list[dict[str, Any]] | None = None,
 ) -> str:
     sections: list[str] = []
-    normalized_ocr = compact_text_evidence(list(ocr_lines or []))[:8]
-    normalized_asr = compact_text_evidence(list(asr_lines or []))[:8]
+    normalized_text_evidence = compact_text_evidence(list(text_evidence_lines or []))[:8]
     normalized_characters = [
         str(reference.get("name", "")).strip()
         for reference in (character_references or [])
         if str(reference.get("name", "")).strip()
     ][:8]
 
-    if normalized_ocr:
-        sections.append("OCR evidence:\n" + "\n".join(f"- {line}" for line in normalized_ocr))
-    if normalized_asr:
-        sections.append("ASR evidence:\n" + "\n".join(f"- {line}" for line in normalized_asr))
+    if normalized_text_evidence:
+        sections.append(
+            "Text evidence source: "
+            f"{text_evidence_source}\n"
+            + "\n".join(f"- {line}" for line in normalized_text_evidence)
+        )
+    if text_evidence_conflict and text_evidence_note.strip():
+        sections.append("Text evidence note:\n" + text_evidence_note.strip())
     if normalized_characters:
         sections.append(
             "Character references:\n" + "\n".join(f"- {name}" for name in normalized_characters)

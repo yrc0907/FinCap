@@ -55,13 +55,14 @@ class MultimodalSemanticContextTests(unittest.TestCase):
 
     def test_format_multimodal_evidence_block_lists_each_evidence_source(self) -> None:
         block = format_multimodal_evidence_block(
-            ocr_lines=["You must finish it today."],
-            asr_lines=["Boss: You must finish it today."],
+            text_evidence_lines=["You must finish it today."],
+            text_evidence_source="ocr",
+            text_evidence_conflict=False,
+            text_evidence_note="",
             character_references=[{"name": "大雄"}],
         )
 
-        self.assertIn("OCR evidence", block)
-        self.assertIn("ASR evidence", block)
+        self.assertIn("Text evidence source: ocr", block)
         self.assertIn("Character references", block)
         self.assertIn("大雄", block)
 

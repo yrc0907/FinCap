@@ -17,6 +17,9 @@ def transcribe_video_to_segments(
     resolved_path = video_path.resolve()
     if not resolved_path.exists():
         return []
+    if not torch.cuda.is_available():
+        print("[Warn] CUDA is unavailable. Automatic ASR was skipped.")
+        return []
     stat = resolved_path.stat()
     cache_key = (str(resolved_path), stat.st_mtime_ns, model_name)
     cached = _ASR_SEGMENT_CACHE.get(cache_key)
@@ -27,7 +30,7 @@ def transcribe_video_to_segments(
     if whisper is None:
         return []
 
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cuda"
     model = _get_model(whisper, model_name=model_name, device=device)
     if model is None:
         return []

@@ -80,7 +80,7 @@ class VlmShotAnalysisMultimodalTests(unittest.TestCase):
         self.assertEqual(len(payload.asrSegments), 1)
         self.assertEqual(payload.characterReferences[0].name, "大雄")
 
-    def test_prompt_includes_ocr_asr_character_and_speaker_fields(self) -> None:
+    def test_prompt_includes_text_evidence_and_speaker_fields(self) -> None:
         prompt = _build_prompt_with_frames(
             shot_lines="- shot 1: 0.000s to 2.000s",
             images=[
@@ -89,21 +89,37 @@ class VlmShotAnalysisMultimodalTests(unittest.TestCase):
             ],
             include_subtitle_region=True,
             prompt_profile="short-video",
-            ocr_lines=["You must finish it today."],
-            asr_lines=["Boss: You must finish it today."],
+            text_evidence_lines=["You must finish it today."],
+            text_evidence_source="ocr",
+            text_evidence_conflict=False,
+            text_evidence_note="",
             character_references=[{"name": "大雄"}],
         )
 
         self.assertIn("speaker_hint", prompt)
         self.assertIn("speaker_confidence", prompt)
-        self.assertIn("OCR evidence", prompt)
-        self.assertIn("ASR evidence", prompt)
+        self.assertIn("Text evidence source: ocr", prompt)
         self.assertIn("Character references", prompt)
         self.assertIn("大雄", prompt)
         self.assertIn("You must finish it today.", prompt)
 
+    def test_prompt_includes_conservative_note_when_text_evidence_conflicts(self) -> None:
+        prompt = _build_prompt_with_frames(
+            shot_lines="- shot 1: 0.000s to 2.000s",
+            images=[{"timeSec": 1.0, "jpegBase64": "scene-a", "kind": "scene"}],
+            include_subtitle_region=True,
+            prompt_profile="short-video",
+            text_evidence_lines=["You must finish it today."],
+            text_evidence_source="conflict",
+            text_evidence_conflict=True,
+            text_evidence_note="OCR and ASR conflict. Be conservative.",
+        )
+
+        self.assertIn("Text evidence source: conflict", prompt)
+        self.assertIn("Be conservative", prompt)
+
     @patch("services.vlm_shot_analysis._extract_keyframes_for_shot")
-    @patch("services.vlm_shot_analysis.extract_ocr_lines")
+    @patch("services.vlm_shot_analysis.extract_ocr_entries")
     @patch("services.vlm_shot_analysis.call_openai_compatible_vision")
     def test_multimodal_prompt_mentions_subtitle_and_high_peak_rubric(
         self,
@@ -115,7 +131,7 @@ class VlmShotAnalysisMultimodalTests(unittest.TestCase):
             {"timeSec": 1.2, "jpegBase64": "scene-a", "kind": "scene"},
             {"timeSec": 1.2, "jpegBase64": "subtitle-a", "kind": "subtitle"},
         ]
-        extract_ocr_mock.return_value = ["You must finish it today."]
+        extract_ocr_mock.return_value = [{"text": "You must finish it today.", "confidence": 0.91}]
         call_openai_mock.return_value = {
             "is_continuous_story": True,
             "highlight_score": 0.82,
@@ -124,6 +140,8 @@ class VlmShotAnalysisMultimodalTests(unittest.TestCase):
             "reason": "Strong pressure and confrontation are visible in subtitle and image.",
             "speaker_hint": "boss",
             "speaker_confidence": 0.76,
+            "evidence_source": "ocr",
+            "text_conflict": False,
         }
 
         analyze_shot_sequence(
@@ -151,8 +169,7 @@ class VlmShotAnalysisMultimodalTests(unittest.TestCase):
         images = call_openai_mock.call_args.kwargs["images"]
         self.assertIn("subtitle-region crops", prompt)
         self.assertIn("threats, pressure, scolding, humiliation", prompt)
-        self.assertIn("OCR evidence", prompt)
-        self.assertIn("ASR evidence", prompt)
+        self.assertIn("Text evidence source: ocr", prompt)
         self.assertIn("Character references", prompt)
         self.assertEqual([item["kind"] for item in images], ["character-reference", "scene", "subtitle"])
 

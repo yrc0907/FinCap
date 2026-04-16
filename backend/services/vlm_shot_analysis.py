@@ -17,7 +17,8 @@ from .multimodal_semantic_context import (
     select_asr_text_for_window,
 )
 from .asr_transcription import transcribe_video_to_segments
-from .ocr_text_extraction import extract_ocr_lines
+from .ocr_text_extraction import extract_ocr_entries
+from .text_evidence_resolution import resolve_text_evidence
 from .vlm_openai_client import call_openai_compatible_vision
 
 LOG_START = "[Start] VLM shot analysis started"
@@ -82,8 +83,8 @@ def analyze_shot_sequence(
                 )
             )
 
-        ocr_lines = (
-            compact_text_evidence(extract_ocr_lines(images))
+        ocr_entries = (
+            extract_ocr_entries(images)
             if active_config.enable_ocr and active_config.enable_subtitle_region
             else []
         )
@@ -94,6 +95,10 @@ def analyze_shot_sequence(
         )
         if asr_text:
             asr_lines = compact_text_evidence([*asr_lines, asr_text])
+        text_evidence = resolve_text_evidence(
+            ocr_entries=ocr_entries,
+            asr_lines=asr_lines,
+        )
 
         response = call_openai_compatible_vision(
             vlm_config=vlm_config,
@@ -102,8 +107,10 @@ def analyze_shot_sequence(
                 images,
                 include_subtitle_region=active_config.enable_subtitle_region,
                 prompt_profile=active_config.prompt_profile,
-                ocr_lines=ocr_lines,
-                asr_lines=asr_lines,
+                text_evidence_lines=text_evidence.primary_lines,
+                text_evidence_source=text_evidence.source,
+                text_evidence_conflict=text_evidence.conflict_detected,
+                text_evidence_note=text_evidence.conservative_note,
                 character_references=character_references or [],
             ),
             images=[*prepared_character_references, *images],
@@ -112,6 +119,8 @@ def analyze_shot_sequence(
             group_index=group_index,
             shot_group=shot_group,
             raw=response,
+            text_evidence_source=text_evidence.source,
+            text_evidence_conflict=text_evidence.conflict_detected,
         )
         groups.append(normalized)
         print(
@@ -152,8 +161,10 @@ def _build_prompt(
     *,
     include_subtitle_region: bool,
     prompt_profile: str,
-    ocr_lines: list[str] | None = None,
-    asr_lines: list[str] | None = None,
+    text_evidence_lines: list[str] | None = None,
+    text_evidence_source: str = "none",
+    text_evidence_conflict: bool = False,
+    text_evidence_note: str = "",
     character_references: list[dict[str, Any]] | None = None,
 ) -> str:
     shot_lines = "\n".join(
@@ -165,8 +176,10 @@ def _build_prompt(
         images,
         include_subtitle_region=include_subtitle_region,
         prompt_profile=prompt_profile,
-        ocr_lines=ocr_lines,
-        asr_lines=asr_lines,
+        text_evidence_lines=text_evidence_lines,
+        text_evidence_source=text_evidence_source,
+        text_evidence_conflict=text_evidence_conflict,
+        text_evidence_note=text_evidence_note,
         character_references=character_references,
     )
 
@@ -177,8 +190,10 @@ def _build_prompt_with_frames(
     *,
     include_subtitle_region: bool,
     prompt_profile: str,
-    ocr_lines: list[str] | None = None,
-    asr_lines: list[str] | None = None,
+    text_evidence_lines: list[str] | None = None,
+    text_evidence_source: str = "none",
+    text_evidence_conflict: bool = False,
+    text_evidence_note: str = "",
     character_references: list[dict[str, Any]] | None = None,
 ) -> str:
     frame_lines = format_vlm_frame_lines(images)
@@ -197,8 +212,10 @@ def _build_prompt_with_frames(
             "Required JSON keys: is_continuous_story, highlight_score, peak_times, peak_role, reason, "
             "speaker_hint, speaker_confidence.\n",
             format_multimodal_evidence_block(
-                ocr_lines=ocr_lines,
-                asr_lines=asr_lines,
+                text_evidence_lines=text_evidence_lines,
+                text_evidence_source=text_evidence_source,
+                text_evidence_conflict=text_evidence_conflict,
+                text_evidence_note=text_evidence_note,
                 character_references=character_references,
             ),
             f"Shots:\n{shot_lines}\n",
@@ -211,6 +228,9 @@ def _normalize_group_result(
     group_index: int,
     shot_group: list[dict[str, Any]],
     raw: dict[str, Any],
+    *,
+    text_evidence_source: str = "none",
+    text_evidence_conflict: bool = False,
 ) -> dict[str, Any]:
     start_sec = float(shot_group[0]["startSec"])
     end_sec = float(shot_group[-1]["endSec"])
@@ -236,6 +256,8 @@ def _normalize_group_result(
         ),
         "speakerHint": str(raw.get("speaker_hint", "")).strip(),
         "speakerConfidence": round(_clamp_score(raw.get("speaker_confidence", 0.0)), 3),
+        "evidenceSource": str(raw.get("evidence_source", text_evidence_source)).strip() or text_evidence_source,
+        "textConflict": bool(raw.get("text_conflict", text_evidence_conflict)),
         "reason": str(raw.get("reason", "")).strip(),
     }
 

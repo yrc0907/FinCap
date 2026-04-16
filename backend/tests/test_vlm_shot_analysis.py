@@ -171,11 +171,15 @@ class VlmShotAnalysisTests(unittest.TestCase):
                 "reason": "Boss pressures the father.",
                 "speaker_hint": "boss",
                 "speaker_confidence": 0.76,
+                "evidence_source": "ocr",
+                "text_conflict": False,
             },
         )
 
         self.assertEqual(result["speakerHint"], "boss")
         self.assertEqual(result["speakerConfidence"], 0.76)
+        self.assertEqual(result["evidenceSource"], "ocr")
+        self.assertFalse(result["textConflict"])
 
 
 if __name__ == "__main__":

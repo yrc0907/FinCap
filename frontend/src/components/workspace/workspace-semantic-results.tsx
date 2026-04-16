@@ -81,6 +81,8 @@ export function WorkspaceSemanticResults({
                         Speaker {group.speakerHint ? group.speakerHint : "--"}
                       </span>
                       <span>Voice {(group.speakerConfidence * 100).toFixed(0)}%</span>
+                      <span>Text {group.evidenceSource}</span>
+                      <span>Conflict {group.textConflict ? "yes" : "no"}</span>
                       <span>Prev hold</span>
                       <span>Next hold</span>
                     </div>
