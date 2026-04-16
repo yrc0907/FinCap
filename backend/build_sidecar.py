@@ -4,20 +4,7 @@ import sys
 import time
 from pathlib import Path
 
-
-def get_host_target() -> str:
-    result = subprocess.run(
-        ["rustc", "-vV"],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-
-    for line in result.stdout.splitlines():
-        if line.startswith("host: "):
-            return line.split("host: ", 1)[1].strip()
-
-    raise RuntimeError("Unable to determine rust host target.")
+from host_target import detect_host_target
 
 
 def main() -> None:
@@ -35,7 +22,7 @@ def main() -> None:
     spec_dir.mkdir(parents=True, exist_ok=True)
     work_dir.mkdir(parents=True, exist_ok=True)
 
-    host_target = get_host_target()
+    host_target = detect_host_target()
     binary_name = "fincap-backend"
     command = [
         sys.executable,

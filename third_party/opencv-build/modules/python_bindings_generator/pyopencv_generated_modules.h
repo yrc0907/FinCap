@@ -1,0 +1,14 @@
+CVPY_MODULE("", cv);
+CVPY_MODULE(".Error", Error);
+CVPY_MODULE(".cuda", cuda);
+CVPY_MODULE(".detail", detail);
+CVPY_MODULE(".ipp", ipp);
+CVPY_MODULE(".ocl", ocl);
+CVPY_MODULE(".ogl", ogl);
+CVPY_MODULE(".parallel", parallel);
+CVPY_MODULE(".samples", samples);
+CVPY_MODULE(".segmentation", segmentation);
+CVPY_MODULE(".utils", utils);
+CVPY_MODULE(".utils.fs", utils_fs);
+CVPY_MODULE(".utils.nested", utils_nested);
+CVPY_MODULE(".videoio_registry", videoio_registry);

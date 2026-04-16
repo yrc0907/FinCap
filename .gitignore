@@ -1,0 +1,12 @@
+.vscode/
+.worktrees/
+worktrees/
+tools/
+.venv-lighthouse/
+artifacts/
+_tmp_*/
+text_video.mp4
+*.log
+*.tmp
+*.temp
+__pycache__/

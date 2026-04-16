@@ -1,0 +1,126 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/include/opencv2/cudawarping.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/pyramids.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/remap.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/resize.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/warp.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/cuda/pyr_down.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/cuda/pyr_up.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/cuda/remap.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/cuda/resize.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv_contrib-4x/modules/cudawarping/src/cuda/warp.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudawarping",
+				"Module"
+			]
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-4x-build-fcl4/cvconfig.h"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-4x-build-fcl4/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-4x-build-fcl4/modules/cudawarping/vs_version.rc"
+		},
+		{
+			"file" : "C:/FinCap/third_party/opencv-4x-build-fcl4/modules/cudawarping/opencv_cudawarping_main.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudawarping",
+			"Module"
+		],
+		"name" : "opencv_cudawarping"
+	}
+}
