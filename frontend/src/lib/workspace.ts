@@ -7,7 +7,9 @@ import type {
   DynamicSegmentGenerationResult,
   DualSignalBoundaryDetectionResult,
   EventMergingResult,
+  FrameOverrideInput,
   MultiscaleDetectionResult,
+  OcrEntryInput,
   SceneDetectorMode,
   StrictShotGenerationResult,
   SubtitleRegion,
@@ -97,9 +99,11 @@ export type RunVlmShotAnalysisPayload = {
   subtitleRegion: SubtitleRegion;
   enableOcr: boolean;
   enableAutoAsr: boolean;
+  ocrEntries: OcrEntryInput[];
   asrText: string;
   asrSegments: AsrSegmentInput[];
   characterReferences: CharacterReferenceInput[];
+  frameOverrides?: FrameOverrideInput[];
   promptProfile: VlmPromptProfile;
 };
 

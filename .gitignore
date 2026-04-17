@@ -16,3 +16,4 @@ text_video.mp4
 *.tmp
 *.temp
 __pycache__/
+third_party/

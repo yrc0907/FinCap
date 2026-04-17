@@ -5,6 +5,11 @@ import { DashboardShell } from "./components/dashboard-shell";
 import { ProjectWorkspace } from "./components/project-workspace";
 import { SettingsModal } from "./components/settings-modal";
 import {
+  loadAppSessionState,
+  resolveAppSessionState,
+  saveAppSessionState,
+} from "./lib/app-session-state";
+import {
   deleteProjectForeverRequest,
   fetchProjects,
   moveProjectToTrashRequest,
@@ -19,6 +24,7 @@ import "./index.css";
 
 const cloneSettings = (settings: SystemConfig): SystemConfig =>
   JSON.parse(JSON.stringify(settings)) as SystemConfig;
+const initialAppSession = loadAppSessionState();
 
 function App() {
   const [showSettings, setShowSettings] = useState(false);
@@ -26,12 +32,20 @@ function App() {
   const [settingsSnapshot, setSettingsSnapshot] = useState<SystemConfig | null>(null);
   const [projects, setProjects] = useState<ProjectItem[]>([]);
   const [projectsReady, setProjectsReady] = useState(false);
-  const [currentView, setCurrentView] = useState<"home" | "workspace">("home");
-  const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
+  const [currentView, setCurrentView] = useState<"home" | "workspace">(
+    initialAppSession.currentView,
+  );
+  const [activeProjectId, setActiveProjectId] = useState<string | null>(
+    initialAppSession.activeProjectId,
+  );
 
   useEffect(() => {
     persistSettings(settings);
   }, [settings]);
+
+  useEffect(() => {
+    saveAppSessionState({ currentView, activeProjectId });
+  }, [activeProjectId, currentView]);
 
   useEffect(() => {
     let active = true;
@@ -65,6 +79,19 @@ function App() {
       active = false;
     };
   }, []);
+
+  useEffect(() => {
+    if (!projectsReady) {
+      return;
+    }
+    const nextSession = resolveAppSessionState({ currentView, activeProjectId }, projects);
+    if (nextSession.currentView !== currentView) {
+      setCurrentView(nextSession.currentView);
+    }
+    if (nextSession.activeProjectId !== activeProjectId) {
+      setActiveProjectId(nextSession.activeProjectId);
+    }
+  }, [activeProjectId, currentView, projects, projectsReady]);
 
   const openSettings = () => {
     setSettingsSnapshot(cloneSettings(withIdleStatus(settings)));
@@ -101,9 +128,11 @@ function App() {
       setActiveProjectId(nextProject.id);
       setCurrentView("workspace");
       toast.success("Project created.");
+      return nextProject;
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unable to upload video.";
       toast.error(`Upload failed: ${message}`);
+      return null;
     }
   };
 
@@ -175,6 +204,7 @@ function App() {
   };
 
   const returnHome = () => {
+    setActiveProjectId(null);
     setCurrentView("home");
   };
 
@@ -215,7 +245,12 @@ function App() {
           onDeleteProjectsForever={permanentlyDeleteProjects}
         />
       ) : (
-        <ProjectWorkspace project={activeProject} onBack={returnHome} settings={settings} />
+        <ProjectWorkspace
+          project={activeProject}
+          onBack={returnHome}
+          onUploadVideo={uploadVideo}
+          settings={settings}
+        />
       )}
 
       <SettingsModal

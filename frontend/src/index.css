@@ -112,6 +112,36 @@
   box-shadow: 0 0 100px -30px rgba(255, 255, 255, 0.05);
 }
 
+.workflow-canvas {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 35%);
+  background-size: 28px 28px, 28px 28px, auto;
+  background-position: center center, center center, center center;
+}
+
+.workflow-editor {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 35%);
+  background-size: 28px 28px, 28px 28px, auto;
+}
+
+.workflow-editor .react-flow__renderer {
+  background: transparent;
+}
+
+.workflow-editor .react-flow__edge-path {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 2px;
+}
+
+.workflow-editor .react-flow__controls {
+  display: none;
+}
+
 @keyframes scan {
   0% {
     transform: translateY(-100%);

@@ -13,7 +13,7 @@ export function ProjectWorkspaceHeader({
   onBack,
 }: ProjectWorkspaceHeaderProps) {
   return (
-    <nav className="relative z-20 mb-8 flex shrink-0 items-center justify-between md:mb-10">
+    <nav className="relative z-20 mb-4 flex shrink-0 items-center justify-between md:mb-6">
       <div className="flex items-center gap-3 md:gap-5">
         <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-[0_0_30px_rgba(255,255,255,0.1)] md:h-11 md:w-11 md:rounded-2xl">
           <Command size={18} className="text-black md:hidden" />
@@ -24,7 +24,7 @@ export function ProjectWorkspaceHeader({
             FinCap
           </div>
           <div className="mt-1 text-[10px] font-mono uppercase tracking-[0.28em] text-white/20">
-            Workspace Layers 07-08
+            Workflow Console
           </div>
           <div className="mt-3 text-[11px] font-mono uppercase tracking-[0.24em] text-white/25">
             {project?.name ?? "No Project"}

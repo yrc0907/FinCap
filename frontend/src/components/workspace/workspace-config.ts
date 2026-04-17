@@ -26,7 +26,10 @@ export type StrictShotControlsPayload = Omit<
   RunStrictShotGenerationPayload,
   "boundaryCandidates"
 >;
-export type VlmControlsPayload = Omit<RunVlmShotAnalysisPayload, "shots" | "vlmConfig">;
+export type VlmControlsPayload = Omit<
+  RunVlmShotAnalysisPayload,
+  "shots" | "vlmConfig" | "frameOverrides"
+>;
 
 export const defaultMultiscalePayload: MultiscaleControlsPayload = {
   coarse_window_sec: 2.0,
@@ -82,6 +85,7 @@ export const defaultVlmPayload: VlmControlsPayload = {
   },
   enableOcr: true,
   enableAutoAsr: true,
+  ocrEntries: [],
   asrText: "",
   asrSegments: [],
   characterReferences: [],
@@ -151,6 +155,7 @@ export const processingModeProfiles: Record<
       },
       enableOcr: true,
       enableAutoAsr: true,
+      ocrEntries: [],
       asrText: "",
       asrSegments: [],
       characterReferences: [],
@@ -217,6 +222,7 @@ export const processingModeProfiles: Record<
       },
       enableOcr: true,
       enableAutoAsr: true,
+      ocrEntries: [],
       asrText: "",
       asrSegments: [],
       characterReferences: [],

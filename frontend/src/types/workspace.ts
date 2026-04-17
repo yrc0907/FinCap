@@ -213,15 +213,33 @@ export type SubtitleRegion = {
 export type VlmPromptProfile = "standard" | "short-video";
 
 export type AsrSegmentInput = {
+  id?: string;
   startSec: number;
   endSec: number;
   text: string;
+  format?: "asr" | "srt";
 };
 
 export type CharacterReferenceInput = {
   id: string;
   name: string;
   imageBase64: string;
+};
+
+export type OcrEntryInput = {
+  id: string;
+  startSec: number;
+  endSec: number;
+  text: string;
+  confidence?: number;
+};
+
+export type FrameOverrideInput = {
+  shotIndex: number;
+  frameIndex: number;
+  groupIndex: number;
+  timeSec: number;
+  sourceTimeSec: number;
 };
 
 export type StrictShotGenerationResult = {
@@ -370,6 +388,23 @@ export type CorrectedEventTimelineResult = {
     sourceShotIndexes: number[];
     sourceGroupIndexes: number[];
   }>;
+  functionalClips: Array<{
+    index: number;
+    eventIndex: number;
+    type: "build" | "peak" | "result" | "transition";
+    startSec: number;
+    endSec: number;
+    durationSec: number;
+    score: number;
+    reason: string;
+    sourceShotIndexes: number[];
+    sourceGroupIndexes: number[];
+    exportStartFrame?: number;
+    exportEndFrame?: number;
+    exportStartSec?: number;
+    exportEndSec?: number;
+    exportDurationSec?: number;
+  }>;
   summary: {
     eventCount: number;
     changedEventCount: number;
@@ -381,5 +416,9 @@ export type CorrectedEventTimelineResult = {
     selectedClipCount: number;
     selectedKeepClipCount: number;
     selectedBridgeClipCount: number;
+    functionalClipCount?: number;
+    functionalBuildClipCount?: number;
+    functionalPeakClipCount?: number;
+    functionalResultClipCount?: number;
   };
 };

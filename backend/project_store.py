@@ -58,6 +58,20 @@ def init_database() -> None:
             )
             """
         )
+        connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS workspace_states (
+                project_id TEXT PRIMARY KEY,
+                semantic_draft_json TEXT,
+                clip_overrides_json TEXT,
+                frame_overrides_json TEXT,
+                runtime_state_json TEXT,
+                updated_at INTEGER NOT NULL,
+                FOREIGN KEY(project_id) REFERENCES projects(id) ON DELETE CASCADE
+            )
+            """
+        )
+        _ensure_column(connection, "workspace_states", "runtime_state_json", "TEXT")
         count = connection.execute("SELECT COUNT(*) FROM projects").fetchone()[0]
         if count == 0:
             now = int(time.time() * 1000)
@@ -107,3 +121,20 @@ def init_database() -> None:
         connection.commit()
     finally:
         connection.close()
+
+
+def _ensure_column(
+    connection: sqlite3.Connection,
+    table_name: str,
+    column_name: str,
+    column_definition: str,
+) -> None:
+    columns = {
+        row["name"]
+        for row in connection.execute(f"PRAGMA table_info({table_name})").fetchall()
+    }
+    if column_name in columns:
+        return
+    connection.execute(
+        f"ALTER TABLE {table_name} ADD COLUMN {column_name} {column_definition}"
+    )

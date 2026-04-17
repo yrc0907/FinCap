@@ -263,9 +263,11 @@ async def run_vlm_shot_analysis(
                 subtitle_region=subtitle_region,
                 prompt_profile=payload.promptProfile,
             ),
+            ocr_entries=[entry.model_dump() for entry in payload.ocrEntries],
             asr_text=payload.asrText,
             asr_segments=[segment.model_dump() for segment in payload.asrSegments],
             character_references=[reference.model_dump() for reference in payload.characterReferences],
+            frame_overrides=[override.model_dump() for override in payload.frameOverrides],
         )
         result["videoIndex"] = video_index
         result["inputShotCount"] = len(payload.shots)

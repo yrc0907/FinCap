@@ -16,12 +16,14 @@ from api_models import (
 from project_store import VIDEOS_DIR, fetch_project_or_404, get_db_connection, init_database
 from services.gpu_runtime import get_gpu_runtime_summary
 from timeline_routes import router as timeline_router
+from workspace_routes import router as workspace_router
 
 DEFAULT_TEST_TEXT = "This is a test from FinCap."
 
 app = FastAPI(title="FinCap Backend", version="0.1.0")
 app.mount("/media", StaticFiles(directory=str(VIDEOS_DIR)), name="media")
 app.include_router(timeline_router)
+app.include_router(workspace_router)
 
 app.add_middleware(
     CORSMiddleware,

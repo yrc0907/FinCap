@@ -124,14 +124,54 @@ class VlmRuntimeConfigRequest(BaseModel):
 
 
 class AsrSegmentRequest(BaseModel):
+    id: str | None = Field(default=None, max_length=120)
     startSec: float = Field(ge=0.0)
     endSec: float = Field(ge=0.0)
     text: str = Field(default="", max_length=4000)
+    format: str | None = Field(default=None, pattern="^(asr|srt)$")
+
+
+class OcrEntryRequest(BaseModel):
+    id: str | None = Field(default=None, max_length=120)
+    startSec: float = Field(ge=0.0)
+    endSec: float = Field(ge=0.0)
+    text: str = Field(default="", max_length=4000)
+    confidence: float | None = Field(default=None, ge=0.0, le=1.0)
 
 
 class CharacterReferenceRequest(BaseModel):
+    id: str | None = Field(default=None, max_length=120)
     name: str = Field(min_length=1, max_length=80)
     imageBase64: str = Field(min_length=1)
+
+
+class FrameOverrideRequest(BaseModel):
+    shotIndex: int = Field(ge=1)
+    frameIndex: int = Field(ge=0)
+    groupIndex: int = Field(ge=1)
+    timeSec: float = Field(ge=0.0)
+    sourceTimeSec: float = Field(ge=0.0)
+
+
+class ClipRangeOverrideRequest(BaseModel):
+    key: str = Field(min_length=1, max_length=200)
+    startSec: float = Field(ge=0.0)
+    endSec: float = Field(ge=0.0)
+
+
+class VlmDraftPayloadRequest(BaseModel):
+    group_size: int = Field(default=3, ge=1, le=8)
+    keyframes_per_shot: int = Field(default=3, ge=1, le=6)
+    highlight_threshold: float = Field(default=0.7, ge=0.0, le=1.0)
+    enableSubtitleRegion: bool = False
+    subtitleRegion: SubtitleRegionRequest | None = None
+    enableOcr: bool = True
+    enableAutoAsr: bool = True
+    ocrEntries: list[OcrEntryRequest] = Field(default_factory=list)
+    asrText: str | None = Field(default=None, max_length=12000)
+    asrSegments: list[AsrSegmentRequest] = Field(default_factory=list)
+    characterReferences: list[CharacterReferenceRequest] = Field(default_factory=list)
+    promptProfile: str = Field(default="short-video", pattern="^(standard|short-video)$")
 
 
 class VlmShotAnalysisRequest(BaseModel):
@@ -144,9 +184,11 @@ class VlmShotAnalysisRequest(BaseModel):
     subtitleRegion: SubtitleRegionRequest | None = None
     enableOcr: bool = True
     enableAutoAsr: bool = True
+    ocrEntries: list[OcrEntryRequest] = Field(default_factory=list)
     asrText: str | None = Field(default=None, max_length=12000)
     asrSegments: list[AsrSegmentRequest] = Field(default_factory=list)
     characterReferences: list[CharacterReferenceRequest] = Field(default_factory=list)
+    frameOverrides: list[FrameOverrideRequest] = Field(default_factory=list)
     promptProfile: str = Field(default="short-video", pattern="^(standard|short-video)$")
 
 
@@ -197,3 +239,25 @@ class EventMergingRequest(BaseModel):
     substantial_segment_sec: float = Field(default=3.5, ge=0.2, le=30.0)
     keep_boundary_score: float = Field(default=0.82, ge=0.0, le=1.0)
     strong_boundary_score: float = Field(default=0.86, ge=0.0, le=1.0)
+
+
+class FunctionalClipExportClipRequest(BaseModel):
+    index: int = Field(ge=1)
+    eventIndex: int | None = Field(default=None, ge=0)
+    type: str = Field(pattern="^(build|peak|result|transition)$")
+    startSec: float = Field(ge=0.0)
+    endSec: float = Field(ge=0.0)
+    durationSec: float = Field(ge=0.0)
+    score: float | None = Field(default=None, ge=0.0, le=1.0)
+    reason: str = Field(default="", max_length=4000)
+    sourceShotIndexes: list[int] = Field(default_factory=list)
+    sourceGroupIndexes: list[int] = Field(default_factory=list)
+    exportStartFrame: int | None = Field(default=None, ge=0)
+    exportEndFrame: int | None = Field(default=None, ge=0)
+    exportStartSec: float | None = Field(default=None, ge=0.0)
+    exportEndSec: float | None = Field(default=None, ge=0.0)
+    exportDurationSec: float | None = Field(default=None, ge=0.0)
+
+
+class FunctionalClipExportRequest(BaseModel):
+    clips: list[FunctionalClipExportClipRequest] = Field(default_factory=list)

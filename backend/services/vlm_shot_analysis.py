@@ -54,13 +54,17 @@ def analyze_shot_sequence(
     shots: list[dict[str, Any]],
     vlm_config: dict[str, str],
     config: VlmShotAnalysisConfig | None = None,
+    ocr_entries: list[dict[str, Any]] | None = None,
     asr_text: str | None = None,
     asr_segments: list[dict[str, Any]] | None = None,
     character_references: list[dict[str, Any]] | None = None,
+    frame_overrides: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     active_config = config or VlmShotAnalysisConfig()
     print(LOG_START)
+    normalized_manual_ocr_entries = _normalize_manual_ocr_entries(ocr_entries or [])
     normalized_asr_segments = list(asr_segments or [])
+    frame_override_map = _build_frame_override_map(frame_overrides or [])
     if active_config.enable_auto_asr and not normalized_asr_segments:
         normalized_asr_segments = transcribe_video_to_segments(
             video_path=video_path,
@@ -77,17 +81,30 @@ def analyze_shot_sequence(
                     video_path=video_path,
                     shot=shot,
                     keyframes_per_shot=active_config.keyframes_per_shot,
+                    sample_times=_resolve_sample_times_for_shot(
+                        shot=shot,
+                        keyframes_per_shot=active_config.keyframes_per_shot,
+                        frame_override_map=frame_override_map,
+                    ),
                     subtitle_region=active_config.subtitle_region
                     if active_config.enable_subtitle_region
                     else None,
                 )
             )
 
-        ocr_entries = (
+        extracted_ocr_entries = (
             extract_ocr_entries(images)
             if active_config.enable_ocr and active_config.enable_subtitle_region
             else []
         )
+        active_ocr_entries = [
+            *_select_manual_ocr_entries_for_window(
+                normalized_manual_ocr_entries,
+                start_sec=float(shot_group[0]["startSec"]),
+                end_sec=float(shot_group[-1]["endSec"]),
+            ),
+            *extracted_ocr_entries,
+        ]
         asr_lines = select_asr_text_for_window(
             normalized_asr_segments,
             start_sec=float(shot_group[0]["startSec"]),
@@ -96,7 +113,7 @@ def analyze_shot_sequence(
         if asr_text:
             asr_lines = compact_text_evidence([*asr_lines, asr_text])
         text_evidence = resolve_text_evidence(
-            ocr_entries=ocr_entries,
+            ocr_entries=active_ocr_entries,
             asr_lines=asr_lines,
         )
 
@@ -335,6 +352,7 @@ def _extract_keyframes_for_shot(
     video_path: Path,
     shot: dict[str, Any],
     keyframes_per_shot: int,
+    sample_times: list[float] | None = None,
     subtitle_region: NormalizedSubtitleRegion | None = None,
 ) -> list[dict[str, Any]]:
     start_sec = float(shot["startSec"])
@@ -343,13 +361,11 @@ def _extract_keyframes_for_shot(
     if duration_sec <= 0.0:
         return []
 
-    if keyframes_per_shot <= 1:
-        sample_times = [start_sec + duration_sec * 0.5]
-    else:
-        sample_times = [
-            start_sec + duration_sec * ((index + 1) / (keyframes_per_shot + 1))
-            for index in range(keyframes_per_shot)
-        ]
+    planned_sample_times = sample_times or _build_default_sample_times(
+        start_sec=start_sec,
+        end_sec=end_sec,
+        keyframes_per_shot=keyframes_per_shot,
+    )
 
     encoded_frames: list[dict[str, Any]] = []
     capture = cv2.VideoCapture(str(video_path))
@@ -357,7 +373,7 @@ def _extract_keyframes_for_shot(
         raise RuntimeError("Unable to open video file for VLM keyframes.")
 
     try:
-        for time_sec in sample_times:
+        for time_sec in planned_sample_times:
             capture.set(cv2.CAP_PROP_POS_MSEC, max(0.0, time_sec) * 1000.0)
             success, frame = capture.read()
             if not success or frame is None:
@@ -373,3 +389,104 @@ def _extract_keyframes_for_shot(
         capture.release()
 
     return encoded_frames
+
+
+def _build_default_sample_times(
+    *,
+    start_sec: float,
+    end_sec: float,
+    keyframes_per_shot: int,
+) -> list[float]:
+    duration_sec = max(0.0, end_sec - start_sec)
+    if duration_sec <= 0.0:
+        return []
+    if keyframes_per_shot <= 1:
+        return [start_sec + duration_sec * 0.5]
+    return [
+        start_sec + duration_sec * ((index + 1) / (keyframes_per_shot + 1))
+        for index in range(keyframes_per_shot)
+    ]
+
+
+def _build_frame_override_map(
+    frame_overrides: list[dict[str, Any]],
+) -> dict[tuple[int, int], float]:
+    override_map: dict[tuple[int, int], float] = {}
+    for override in frame_overrides:
+        try:
+            shot_index = int(override.get("shotIndex", 0))
+            frame_index = int(override.get("frameIndex", -1))
+            time_sec = float(override.get("timeSec", 0.0))
+        except (TypeError, ValueError):
+            continue
+        if shot_index <= 0 or frame_index < 0:
+            continue
+        override_map[(shot_index, frame_index)] = time_sec
+    return override_map
+
+
+def _resolve_sample_times_for_shot(
+    *,
+    shot: dict[str, Any],
+    keyframes_per_shot: int,
+    frame_override_map: dict[tuple[int, int], float],
+) -> list[float]:
+    start_sec = float(shot["startSec"])
+    end_sec = float(shot["endSec"])
+    default_sample_times = _build_default_sample_times(
+        start_sec=start_sec,
+        end_sec=end_sec,
+        keyframes_per_shot=keyframes_per_shot,
+    )
+    resolved: list[float] = []
+    shot_index = int(shot["index"])
+    for frame_index, default_time in enumerate(default_sample_times):
+        override_time = frame_override_map.get((shot_index, frame_index), default_time)
+        resolved.append(min(max(override_time, start_sec), end_sec))
+    return resolved
+
+
+def _normalize_manual_ocr_entries(
+    entries: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    normalized: list[dict[str, Any]] = []
+    for entry in entries:
+        text = str(entry.get("text", "")).strip()
+        if not text:
+            continue
+        try:
+            start_sec = round(float(entry.get("startSec", 0.0)), 3)
+            end_sec = round(float(entry.get("endSec", start_sec)), 3)
+            confidence = float(entry.get("confidence", 1.0))
+        except (TypeError, ValueError):
+            continue
+        normalized.append(
+            {
+                "startSec": max(0.0, start_sec),
+                "endSec": max(start_sec, end_sec),
+                "text": text,
+                "confidence": min(max(confidence, 0.0), 1.0),
+            }
+        )
+    return normalized
+
+
+def _select_manual_ocr_entries_for_window(
+    entries: list[dict[str, Any]],
+    *,
+    start_sec: float,
+    end_sec: float,
+) -> list[dict[str, Any]]:
+    selected: list[dict[str, Any]] = []
+    for entry in entries:
+        entry_start = float(entry.get("startSec", 0.0))
+        entry_end = float(entry.get("endSec", entry_start))
+        if entry_end < start_sec or entry_start > end_sec:
+            continue
+        selected.append(
+            {
+                "text": str(entry.get("text", "")).strip(),
+                "confidence": float(entry.get("confidence", 1.0)),
+            }
+        )
+    return selected

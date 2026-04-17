@@ -4,7 +4,7 @@ export type DashboardShellProps = {
   onOpenSettings: () => void;
   projects: ProjectItem[];
   projectsReady: boolean;
-  onUploadVideo: (file: File) => void | Promise<void>;
+  onUploadVideo: (file: File) => void | Promise<ProjectItem | null>;
   onOpenProject: (projectId: string) => void;
   onRenameProject: (projectId: string, nextName: string) => void | Promise<void>;
   onMoveProjectsToTrash: (projectIds: string[]) => void | Promise<void>;
